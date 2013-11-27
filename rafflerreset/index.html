@@ -1,0 +1,31 @@
+
+<html>
+<head>
+	<link rel="stylesheet" href="css/raffler.css" media="screen">
+</head>
+<body>
+	<header id="header">
+		<h1>Raffler</h1>
+	</header>
+	<section id="raffler">
+		<div id="container">
+		</div>
+	</section>
+	<script type="text/template" id="item-template">
+		<input id="new-name" size="60" autofocus><br>
+		<input type="submit" value="New" id="newvalue">
+		<input type="submit" value="Draw Winner" id="draw">
+		<input type="submit" value="Reset Winners" id="reset"/>
+	<ul id="name-list">
+      <% _.each(entries, function(entry){ %>
+  	  <li id='<%- entry.id %>'><%- entry.name %><span class="entry-winner"><% if (entry.winner) {%>WINNER<% } %></span></li>
+      <% }); %>
+	</ul>
+ 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" type="text/javascript"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js" type="text/javascript"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.0/backbone.localStorage-min.js" type="text/javascript"></script>
+	<script src="js/raffler-localstorage.js"></script>
+</body>
+</html>
